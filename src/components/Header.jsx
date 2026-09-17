@@ -9,6 +9,7 @@ const Header = () => {
     const navLinks = [
         { name: 'Home', to: '/home' },
         { name: 'About us', to: '/about' },
+        { name: 'How to use', to: '/use' },
         { name: 'Contact us', to: '/contact' }
     ];
 
@@ -25,7 +26,7 @@ const Header = () => {
                     {/* Desktop Navigation */}
                     <nav className="hidden lg:flex items-center space-x-8">
                         {navLinks.map((link) => (
-                            <Link to={link.to} key={link.name} href={link.href} className="text-gray-600 hover:text-purple-600 transition-colors">
+                            <Link to={link.to} key={link.name} className="text-gray-600 hover:text-purple-600 transition-colors">
                                 {link.name}
                             </Link>
                         ))}
@@ -61,20 +62,18 @@ const Header = () => {
                     <div className="container mx-auto px-4 py-4">
                         <nav className="flex flex-col space-y-4">
                             {navLinks.map((link) => (
-                                <a key={link.name} href={link.href} className="text-gray-600 hover:text-purple-600 transition-colors">
+                                <Link key={link.name} to={link.to} onClick={() => setIsMenuOpen(false)} className="text-gray-600 hover:text-purple-600 transition-colors">
                                     {link.name}
-                                </a>
+                                </Link>
                             ))}
                             <div className="flex flex-col space-y-3 pt-4 border-t border-gray-100">
-                                <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors w-full text-left">
+                                <Link to="/login" onClick={() => setIsMenuOpen(false)} className="text-gray-600 hover:text-purple-600 transition-colors w-full text-left">
                                     Login
-                                </a>
-                                <a
-                                    href="#"
-                                    className="bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors text-center"
+                                </Link>
+                                <Link to="/signup" onClick={() => setIsMenuOpen(false)} className="bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors text-center"
                                 >
                                     Get Started
-                                </a>
+                                </Link>
                             </div>
                         </nav>
                     </div>
