@@ -24,7 +24,7 @@ const TransactionInfoCard = ({icon, title, date, amount, type, hideDeleteBtn, on
                     {!hideDeleteBtn && (
                         <button
                             onClick={onDelete}
-                            className="text-gray-400 hover:text-red-800 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
+                            className="text-gray-400 hover:text-red-800 opacity-100 group-hover:opacity-100 transition-opacity cursor-pointer">
                             <Trash2 size={18} />
                         </button>
                     )}
